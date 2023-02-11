@@ -115,10 +115,20 @@ title("Plot of y1 (subplot 3)");
 grid on;
 
 subplot(2, 2, 4)
-h = plot(n(1:400), y1(1:400), '.-');
+plot(n(1:400), y1(1:400), '.-');
 xlabel("sample index")
 ylabel("Output")
 title("Plot of y1 (subplot 4)");
+grid on;
+
+%% Plot with axis limits
+
+figure;
+h = plot(n, y1)
+axis([0 400 -5 5])           % axis([xmin xmax ymin ymax])
+xlabel("sample index")
+ylabel("Output")
+title("Axis limits example");
 grid on;
 
 waitfor(h)         % Not necessary when running Matlab, I'm using Octave so this keeps the figures open.
